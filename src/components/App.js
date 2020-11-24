@@ -34,6 +34,8 @@ const App = () => {
     return eachCharacter.name.toLowerCase().includes(filterText.toLowerCase());
   });
 
+  //ordenamos por orden alfabético
+
   //Buscamos cada personaje por su id para que se renderice cuando hagamos click en el link.
   const renderDetail = (props) => {
     const routeCharacterId = parseInt(props.match.params.id);
