@@ -1,0 +1,36 @@
+.card {
+  display: inline;
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+.cardList {
+  margin-left: -10px;
+  grid-gap: 40px;
+  grid-template-columns: 1fr;
+  display: grid;
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @media (min-width: 1200px) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+.titleCard {
+  margin-bottom: -15px;
+  margin-top: -7px;
+  margin-left: 10px;
+}
+
+.subtitle {
+  margin-left: 10px;
+}
+
+.image {
+  margin-bottom: 10px;
+  width: 250px;
+  height: 250px;
+}

@@ -1,0 +1,33 @@
+.cardDetail {
+  width: 500px;
+  height: 300px;
+  background-color: #01b4c6;
+  display: flex;
+  justify-content: center;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.imageDetail {
+  width: 200px;
+  height: 200px;
+}
+
+.description {
+  display: block;
+}
+
+.icon {
+  margin-left: 20px;
+  border: red;
+}
+
+.definition {
+  font-weight: bold;
+}
+
+.detail-box {
+  display: flex;
+  justify-content: center;
+}

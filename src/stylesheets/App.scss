@@ -1,9 +1,12 @@
-* {
-  background-color: #282c34;
+.main {
+  background-color: black;
+
   margin: 0;
   padding: 0;
 }
 
-.App {
-  color: white;
+.main-detail {
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
