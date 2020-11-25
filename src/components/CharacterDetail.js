@@ -72,7 +72,7 @@ class CharacterDetail extends React.Component {
 
 CharacterDetail.propTypes = {
   episodesdetail: PropTypes.number,
-  origindetail: PropTypes.string,
+
   statusdetail: PropTypes.string,
   speciesdetail: PropTypes.string,
 };

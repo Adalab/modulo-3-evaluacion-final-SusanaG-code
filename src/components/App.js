@@ -36,20 +36,17 @@ const App = () => {
         .toLowerCase()
         .includes(filterText.toLowerCase());
     })
-    /*takes a comparison function as the only argument, returning a alphabetically sorted list.*/
-    .sort((charac1, charac2) => (charac1 > charac2 ? 1 : -1));
+    /*toma como argumento una comparación y te devuelve el resultado ordenado. Aquí comparo cada nombre y los rdena alfabéticamente..*/
+    .sort((charac1, charac2) => (charac1.name > charac2.name ? 1 : -1));
 
   //Buscamos cada personaje por su id para que se renderice cuando hagamos click en el link.
   const renderDetail = (props) => {
     const routeCharacterId = parseInt(props.match.params.id);
-    console.log(routeCharacterId);
-
     const foundCharacter = characters.find((eachCharacter) => {
       return routeCharacterId === eachCharacter.id;
     });
     //si lo he encontrado
-    if (foundCharacter !== undefined) {
-      console.log(foundCharacter);
+    if (foundCharacter) {
       return (
         <CharacterDetail
           titledetail="Name: "
@@ -62,12 +59,16 @@ const App = () => {
         />
       );
     } else {
-      return <p>No hay personaje</p>;
+      return (
+        <div className="not-found">
+          <p>Not found</p>
+        </div>
+      );
     }
   };
 
   return (
-    <main className="main">
+    <main className="main main2">
       <Header />
       <Switch>
         {isLoading === true ? <Loading /> : null}
@@ -85,5 +86,4 @@ const App = () => {
   );
 };
 
-App.propTypes = {};
 export default App;
