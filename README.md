@@ -44,9 +44,8 @@ o cambie la ruta sin querer.
 •El filtro debe filtrar independientemente de que la usuaria introduzca el texto en mayúsuclas o minúsculas.
 
 •Al entrar en el detalle de un personaje y a continuación pulsar atrás, el campo de texto debe mostrar el texto que tenía anteriormente.
-6. 
 
-BONUS: Mejoras visuales
+6. BONUS: Mejoras visuales
 Para terminar, podéis realizar algunas mejoras visuales del ejercicio. Por ejemplo:
 
 •Mostrar la especie y si un personajes está muerto con un icono. •Usar algún sistema de grid para pintar el listado de personajes. •Que funcione bien el responsive en dispositivos pequeños.
