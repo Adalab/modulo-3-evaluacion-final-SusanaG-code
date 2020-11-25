@@ -7,6 +7,7 @@ const CharacterCard = (props) => {
     <article className="card">
       <Link
         to={`/character-detail/${props.id}`}
+        // target="_blank"
         title="Ver los detalles de este personaje"
       >
         <img className="image" src={props.imageUrl} alt={props.name}></img>
