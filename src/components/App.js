@@ -32,7 +32,7 @@ const App = () => {
         .toLowerCase()
         .includes(filterText.toLowerCase());
     })
-    .sort((charac1, charac2) => (charac1 > charac2 ? 1 : -1));
+    .sort((charac1, charac2) => (charac1.name > charac2.name ? 1 : -1));
 
   const renderDetail = (props) => {
     const routeCharacterId = parseInt(props.match.params.id);
