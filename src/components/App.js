@@ -8,11 +8,8 @@ import Loading from "./Loading";
 import Header from "./Header";
 
 const App = () => {
-  //guardamos datos del api en el state.
   const [characters, setCharacters] = useState([]);
-  //guardamos los datos del search en el state.
   const [filterText, setFilterText] = useState("");
-  //guardamos el dato de si está loading o no y empieza en booleano false
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
@@ -29,27 +26,22 @@ const App = () => {
     setFilterText(filterText);
   };
 
-  //filtramos el listado del api con el nombre del personaje y que incluya las minúsculas.
   let filteredCharacters = characters
     .filter((eachCharacter) => {
       return eachCharacter.name
         .toLowerCase()
         .includes(filterText.toLowerCase());
     })
-    /*takes a comparison function as the only argument, returning a alphabetically sorted list.*/
     .sort((charac1, charac2) => (charac1 > charac2 ? 1 : -1));
 
-  //Buscamos cada personaje por su id para que se renderice cuando hagamos click en el link.
   const renderDetail = (props) => {
     const routeCharacterId = parseInt(props.match.params.id);
-    console.log(routeCharacterId);
 
     const foundCharacter = characters.find((eachCharacter) => {
       return routeCharacterId === eachCharacter.id;
     });
-    //si lo he encontrado
+
     if (foundCharacter !== undefined) {
-      console.log(foundCharacter);
       return (
         <CharacterDetail
           titledetail="Name: "
