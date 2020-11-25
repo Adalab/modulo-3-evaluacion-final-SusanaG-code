@@ -30,11 +30,14 @@ const App = () => {
   };
 
   //filtramos el listado del api con el nombre del personaje y que incluya las minúsculas.
-  let filteredCharacters = characters.filter((eachCharacter) => {
-    return eachCharacter.name.toLowerCase().includes(filterText.toLowerCase());
-  });
-
-  //ordenamos por orden alfabético
+  let filteredCharacters = characters
+    .filter((eachCharacter) => {
+      return eachCharacter.name
+        .toLowerCase()
+        .includes(filterText.toLowerCase());
+    })
+    /*takes a comparison function as the only argument, returning a alphabetically sorted list.*/
+    .sort((charac1, charac2) => (charac1 > charac2 ? 1 : -1));
 
   //Buscamos cada personaje por su id para que se renderice cuando hagamos click en el link.
   const renderDetail = (props) => {

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../stylesheets/CharacterDetail.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -6,6 +7,7 @@ import {
   faPastafarianism,
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
+import PropTypes from "prop-types";
 
 class CharacterDetail extends React.Component {
   constructor(props) {
@@ -50,7 +52,13 @@ class CharacterDetail extends React.Component {
               <span className="definition">Episodes: </span>
               {this.props.episodesdetail}
             </p>
+            <Link to="/">
+              <div>
+                <button className="bton">Go back </button>
+              </div>
+            </Link>
           </div>
+
           <img
             className="imageDetail"
             src={this.props.imagedetail}
@@ -62,5 +70,10 @@ class CharacterDetail extends React.Component {
   }
 }
 
-CharacterDetail.defaultProps = {};
+CharacterDetail.propTypes = {
+  episodesdetail: PropTypes.number,
+  origindetail: PropTypes.string,
+  statusdetail: PropTypes.string,
+  speciesdetail: PropTypes.string,
+};
 export default CharacterDetail;
