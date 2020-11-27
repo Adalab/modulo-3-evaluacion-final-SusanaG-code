@@ -11,6 +11,7 @@ const App = () => {
   const [characters, setCharacters] = useState([]);
   const [filterText, setFilterText] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [selectValue, setValueSelect] = useState("");
 
   useEffect(() => {
     setIsLoading(true);
@@ -22,9 +23,19 @@ const App = () => {
     });
   }, []);
 
-  const handleChange = (filterText) => {
+  const handleChange = (filterText, selectValue) => {
+    if (selectValue === "Gender") {
+      setValueSelect(filteredSpecies);
+    }
     setFilterText(filterText);
   };
+
+  const handleChangeSelect = (selectValue) => {
+    setValueSelect(selectValue);
+  };
+
+  const filteredSpecies = characters.filter((eachCharac) => eachCharac.species);
+  console.log(filteredSpecies);
 
   let filteredCharacters = characters
     .filter((eachCharacter) => {
@@ -32,6 +43,7 @@ const App = () => {
         .toLowerCase()
         .includes(filterText.toLowerCase());
     })
+
     .sort((charac1, charac2) => (charac1.name > charac2.name ? 1 : -1));
 
   const renderDetail = (props) => {
@@ -64,11 +76,15 @@ const App = () => {
       <Switch>
         {isLoading === true ? <Loading /> : null}
         <Route exact path="/">
+          hole
           <CharacterList
             className="card"
             characters={filteredCharacters}
             handleChange={handleChange}
+            handleChangeSelect={handleChangeSelect}
             filterText={filterText}
+            selectValue={selectValue}
+            filteredSpecies={filteredSpecies}
           />
         </Route>
         <Route path="/character-detail/:id" component={renderDetail}></Route>
