@@ -26,7 +26,6 @@ const Filter = (props) => {
         <option value="Male">Male</option>
         <option value="Female">Female</option>
         <option value="unknown">Unknown</option>
-        <option value="all">All</option>
       </select>
     </form>
   );
