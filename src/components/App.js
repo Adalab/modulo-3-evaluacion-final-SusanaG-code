@@ -12,6 +12,8 @@ const App = () => {
   const [filterText, setFilterText] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
+  const [valueSelect, setIsValueSelect] = useState("Male");
+
   useEffect(() => {
     setIsLoading(true);
     api.getDataFromApi().then((data) => {
@@ -26,13 +28,22 @@ const App = () => {
     setFilterText(filterText);
   };
 
+  const handleSelect = (selectValue) => {
+    setIsValueSelect(selectValue);
+    console.log("He llegado", selectValue);
+  };
+
   let filteredCharacters = characters
     .filter((eachCharacter) => {
       return eachCharacter.name
         .toLowerCase()
         .includes(filterText.toLowerCase());
     })
+    .filter((eachCharacter) =>
+      eachCharacter.gender === valueSelect ? true : false
+    )
     .sort((charac1, charac2) => (charac1.name > charac2.name ? 1 : -1));
+  console.log(characters);
 
   const renderDetail = (props) => {
     const routeCharacterId = parseInt(props.match.params.id);
@@ -59,21 +70,24 @@ const App = () => {
   };
 
   return (
-    <main className="main">
-      <Header />
-      <Switch>
-        {isLoading === true ? <Loading /> : null}
-        <Route exact path="/">
-          <CharacterList
-            className="card"
-            characters={filteredCharacters}
-            handleChange={handleChange}
-            filterText={filterText}
-          />
-        </Route>
-        <Route path="/character-detail/:id" component={renderDetail}></Route>
-      </Switch>
-    </main>
+    <div className="body">
+      <main className="main">
+        <Header />
+        <Switch>
+          {isLoading === true ? <Loading /> : null}
+          <Route exact path="/">
+            <CharacterList
+              className="card"
+              characters={filteredCharacters}
+              handleChange={handleChange}
+              filterText={filterText}
+              handleSelect={handleSelect}
+            />
+          </Route>
+          <Route path="/character-detail/:id" component={renderDetail}></Route>
+        </Switch>
+      </main>
+    </div>
   );
 };
 

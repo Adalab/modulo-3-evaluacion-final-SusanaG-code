@@ -18,14 +18,15 @@ const CharacterList = (props) => {
 
   if (charactersList.length !== 0) {
     return (
-      <section>
+      <>
         <Filter
           handleChange={props.handleChange}
           filterText={props.filterText}
+          handleSelect={props.handleSelect}
         />
 
         <ul className="cardList">{charactersList}</ul>
-      </section>
+      </>
     );
   } else {
     return (
