@@ -20,7 +20,7 @@ class CharacterDetail extends React.Component {
       <section className="detail-box">
         <article className={`cardDetail ${this.props.id}`}>
           <div className="description">
-            <h2>
+            <h2 className="title-detail">
               {this.props.titledetail}
               {this.props.namedetail}
             </h2>
@@ -53,9 +53,7 @@ class CharacterDetail extends React.Component {
               {this.props.episodesdetail}
             </p>
             <Link to="/">
-              <div>
-                <button className="bton">Go back </button>
-              </div>
+              <button className="btn">Go back </button>
             </Link>
           </div>
 

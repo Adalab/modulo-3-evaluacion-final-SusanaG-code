@@ -16,11 +16,13 @@
 
 .description {
   display: block;
+  background-color: #01b4c6;
 }
 
 .icon {
   margin-left: 20px;
-  border: red;
+
+  background-color: #01b4c6;
 }
 
 .definition {
@@ -35,4 +37,16 @@
 .btn {
   justify-content: center;
   width: 90px;
+  background-color: #01b4c6;
+}
+
+.title-detail {
+  background-color: #01b4c6;
+}
+
+p {
+  background-color: #01b4c6;
+}
+span {
+  background-color: #01b4c6;
 }
