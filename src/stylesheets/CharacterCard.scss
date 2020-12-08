@@ -1,5 +1,4 @@
 .card {
-  // display: inline;
   height: 335px;
   width: 250px;
   flex-direction: column;
@@ -7,6 +6,7 @@
   justify-content: center;
   align-items: center;
   box-shadow: 2px 3px 10px 5px grey;
+
   cursor: pointer;
 
   a {
@@ -32,7 +32,7 @@
 
 .image {
   width: 240px;
-  height: 240px;
+  height: 220px;
 }
 
 .title {
@@ -42,4 +42,21 @@
   justify-content: space-evenly;
   height: 80px;
   background-color: #01b4c6;
+}
+
+.btn-fav {
+  background-color: transparent;
+  width: 30px;
+  border-color: black;
+  border-style: dashed;
+  padding-top: 3px;
+  transform: translate(70px, -25px);
+}
+
+.btn-favClick {
+  background-color: deeppink;
+}
+
+.iconFav {
+  background-color: transparent;
 }

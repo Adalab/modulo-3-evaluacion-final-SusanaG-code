@@ -12,6 +12,7 @@ const CharacterList = (props) => {
         name={character.name}
         species={character.species}
         id={character.id}
+        handleFav={props.handleFav}
       />
     );
   });

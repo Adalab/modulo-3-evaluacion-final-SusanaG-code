@@ -14,6 +14,8 @@ const App = () => {
 
   const [valueSelect, setIsValueSelect] = useState("Male");
 
+  const [favourites, setFavourites] = useState([]);
+
   useEffect(() => {
     setIsLoading(true);
     api.getDataFromApi().then((data) => {
@@ -30,7 +32,11 @@ const App = () => {
 
   const handleSelect = (selectValue) => {
     setIsValueSelect(selectValue);
-    console.log("He llegado", selectValue);
+  };
+
+  const handleFav = (clickFav) => {
+    const newFavouriteList = [...favourites, clickFav];
+    setFavourites(newFavouriteList);
   };
 
   let filteredCharacters = characters
@@ -43,7 +49,6 @@ const App = () => {
       eachCharacter.gender === valueSelect ? true : false
     )
     .sort((charac1, charac2) => (charac1.name > charac2.name ? 1 : -1));
-  console.log(characters);
 
   const renderDetail = (props) => {
     const routeCharacterId = parseInt(props.match.params.id);
@@ -82,6 +87,7 @@ const App = () => {
               handleChange={handleChange}
               filterText={filterText}
               handleSelect={handleSelect}
+              handleFav={handleFav}
             />
           </Route>
           <Route path="/character-detail/:id" component={renderDetail}></Route>
