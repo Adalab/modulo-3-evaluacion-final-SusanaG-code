@@ -34,11 +34,6 @@ const App = () => {
     setIsValueSelect(selectValue);
   };
 
-  const handleFav = (clickFav) => {
-    const newFavouriteList = [...favourites, clickFav];
-    setFavourites(newFavouriteList);
-  };
-
   let filteredCharacters = characters
     .filter((eachCharacter) => {
       return eachCharacter.name
@@ -87,7 +82,6 @@ const App = () => {
               handleChange={handleChange}
               filterText={filterText}
               handleSelect={handleSelect}
-              handleFav={handleFav}
             />
           </Route>
           <Route path="/character-detail/:id" component={renderDetail}></Route>

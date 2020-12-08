@@ -6,12 +6,6 @@ import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 
 const CharacterCard = (props) => {
-  const handleFav = (ev) => {
-    const clickFav = ev.currentTarget.value;
-    props.handleFav(clickFav);
-    console.log(clickFav);
-  };
-
   const [color, setColor] = useState("");
 
   return (
